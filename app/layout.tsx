@@ -14,8 +14,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang='en'>
       <body
-        // className={inter.className}
-        className={clsx(inter.className, 'bg-bg-dark', 'text-font-dark')}
+        className={clsx(
+          inter.className,
+          'text-slate-100 container mx-auto md:px-4 py-2 xl:max-w-6xl'
+        )}
       >
         <NavMenu />
         {children}
