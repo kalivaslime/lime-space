@@ -34,6 +34,23 @@ p {
   @apply font-normal text-white;
 }
 
+@layer base {
+  ::selection {
+    background-color: #d946ef;
+    color: #ffffff;
+  }
+
+  ::-moz-selection {
+    background-color: #d946ef;
+    color: #ffffff;
+  }
+
+  ::-webkit-selection {
+    background-color: #d946ef;
+    color: #ffffff;
+  }
+}
+
 @layer components {
   .btn {
     @apply bg-emerald-500 text-white font-bold py-2 px-4 rounded;
