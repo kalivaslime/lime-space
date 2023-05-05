@@ -61,6 +61,9 @@ p {
   .nav-link {
     @apply gap-4 h-16 flex items-center p-1  hover:text-emerald-400;
   }
+  .nav-button {
+    @apply border border-emerald-500 hover:bg-emerald-300 hover:text-emerald-950 rounded-sm px-2 py-1 transition-all;
+  }
 }
 /* .container {
   @apply max-w-screen-2xl mx-auto px-3 md:px-8;

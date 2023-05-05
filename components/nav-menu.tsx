@@ -1,16 +1,17 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import {SignInButton, SignOutButton} from './shared/buttons'
 
 export default function NavMenu() {
   return (
     <nav className='flex flex-col md:flex-row h-16 justify-between items-center mb-3'>
-      <Link className='text-primary' href='/'>
+      <Link href='/'>
         <Image
-          className='text-primary'
-          src='/logo.svg'
+          className='text'
+          src='/next.svg'
           alt='logo'
-          width={216}
-          height={30}
+          width={150}
+          height={20}
         />
       </Link>
 
@@ -23,6 +24,12 @@ export default function NavMenu() {
         </li>
         <li className='nav-link'>
           <Link href='/users'>Users</Link>
+        </li>
+        <li className='nav-link'>
+          <SignInButton />
+        </li>
+        <li className='nav-link'>
+          <SignOutButton />
         </li>
       </ul>
     </nav>

@@ -2,6 +2,7 @@ import './globals.css'
 import {Inter} from 'next/font/google'
 import clsx from 'clsx'
 import NavMenu from '@/components/nav-menu'
+import AuthProvider from '@/components/auth-provider'
 
 const inter = Inter({subsets: ['latin']})
 
@@ -12,16 +13,18 @@ export const metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang='en'>
-      <body
-        className={clsx(
-          inter.className,
-          'text-slate-100 container mx-auto md:px-4 py-2 xl:max-w-6xl'
-        )}
-      >
-        <NavMenu />
-        {children}
-      </body>
-    </html>
+    <AuthProvider>
+      <html lang='en'>
+        <body
+          className={clsx(
+            inter.className,
+            'text-slate-100 container mx-auto md:px-4 py-2 xl:max-w-6xl'
+          )}
+        >
+          <NavMenu />
+          {children}
+        </body>
+      </html>
+    </AuthProvider>
   )
 }
