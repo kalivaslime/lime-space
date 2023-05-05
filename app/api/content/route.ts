@@ -35,6 +35,6 @@ const posts = [
 ]
 
 export async function GET() {
-  const session = await getServerSession()
+  // const session = await getServerSession()
   return NextResponse.json(posts)
 }

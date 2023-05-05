@@ -1,3 +1,28 @@
-export default function Page() {
-  return <h2 className='text-3xl'>Hello Mom</h2>
+import {getServerSession} from 'next-auth'
+// import {redirect} from 'next/navigation'
+
+export default async function Page() {
+  const session = await getServerSession()
+
+  if (!session) {
+    return (
+      <div>
+        <h1>Welcome to NextSpace!</h1>
+        <p>
+          A next-gen social media app to connect with frens inspired by MySpace
+        </p>
+        <p>To get started, sign up for an account</p>
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      <h1>Welcome to NextSpace!</h1>
+      <p>
+        A next-gen social media app to connect with frens inspired by MySpace
+      </p>
+      <p>Thanks for signing up,</p>
+    </div>
+  )
 }
