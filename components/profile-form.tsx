@@ -1,11 +1,13 @@
 'use client'
 import {User} from '@prisma/client'
+import {useRouter} from 'next/navigation'
 
 type ProfileFormProps = {
   user: User
 }
 
 export function ProfileForm({user}: ProfileFormProps) {
+  const router = useRouter()
   const updateUser = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
@@ -24,6 +26,7 @@ export function ProfileForm({user}: ProfileFormProps) {
     })
 
     await res.json()
+    alert('Profile updated!')
   }
 
   return (

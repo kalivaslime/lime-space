@@ -1,3 +1,4 @@
+import FollowButton from '@/components/shared/follow-button'
 import {prisma} from '@/lib/prisma'
 import {Metadata} from 'next'
 import Image from 'next/image'
@@ -14,7 +15,6 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
 }
 
 export default async function UserProfile({params}: Props) {
-  await delay(1000)
   const user = await prisma.user.findUnique({where: {id: params.id}})
   const {name, bio, image} = user ?? {}
 
@@ -33,10 +33,8 @@ export default async function UserProfile({params}: Props) {
         {bio ??
           'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus ut tempora iure vero incidunt repudiandae dignissimos quod adipisci nesciunt optio? Quidem, esse quia! Odio pariatur iusto, incidunt porro quaerat amet!'}
       </p>
+      {/* @ts-expect-error Server Component */}
+      <FollowButton targetUserId={params.id} />
     </div>
   )
-}
-
-function delay(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms))
 }

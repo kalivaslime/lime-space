@@ -23,7 +23,7 @@ export default async function Page() {
       <p>
         A next-gen social media app to connect with frens inspired by MySpace
       </p>
-      <p>Thanks for signing up,</p>
+      <p>Thanks for signing up yo</p>
     </div>
   )
 }
