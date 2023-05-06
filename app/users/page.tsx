@@ -9,10 +9,11 @@ export default async function Page() {
       {users.map(user => (
         <UserCard key={user.id} {...user} />
       ))}
-      <UserCard key={2} age={30} name={'John Doe'} id='2' />
-      <UserCard key={3} age={30} name={'John Doe'} id='3' />
-      <UserCard key={4} age={30} name={'John Doe'} id='2' />
-      <UserCard key={5} age={30} name={'John Doe'} id='2' />
+      <UserCard key={2} age={30} name={'John Doe'} />
+      <UserCard key={3} age={42} name={'Bob Bob'} />
+      <UserCard key={4} age={28} name={'Travis Doe'} />
+      <UserCard key={5} age={44} name={'Young Thug'} />
+      <UserCard key={6} age={30} name={'Jane Doe'} />
     </div>
   )
 }

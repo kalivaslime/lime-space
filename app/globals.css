@@ -64,6 +64,12 @@ p {
   .nav-button {
     @apply border border-emerald-500 hover:bg-emerald-300 hover:text-emerald-950 rounded-sm px-2 py-1 transition-all;
   }
+  .spin {
+    @apply animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-emerald-500;
+  }
+  .error-button {
+    @apply bg-red-500 text-white font-bold py-2 px-4 rounded;
+  }
 }
 /* .container {
   @apply max-w-screen-2xl mx-auto px-3 md:px-8;

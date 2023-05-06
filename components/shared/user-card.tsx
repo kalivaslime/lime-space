@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 interface Props {
-  id: string
+  id?: string
   name: string | null
   age: number | null
   image?: string | null
@@ -20,7 +20,7 @@ export default function UserCard({id, name, age, image}: Props) {
       />
       <div className='px-2'>
         <p className='font-bold text-emerald-500 mb-4'>
-          <Link href={`/users/${id}`}>{name}</Link>
+          {id ? <Link href={`/users/${id}`}>{name}</Link> : name}
         </p>
         <p>Age: {age ?? 69}</p>
       </div>
