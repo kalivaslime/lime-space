@@ -1,6 +1,10 @@
 'use client'
 import {User} from '@prisma/client'
 import {useRouter} from 'next/navigation'
+import {Input} from './ui/input'
+import {Label} from './ui/label'
+import {Textarea} from './ui/textarea'
+import {Button} from './ui/button'
 
 type ProfileFormProps = {
   user: User
@@ -32,38 +36,32 @@ export function ProfileForm({user}: ProfileFormProps) {
   return (
     <div>
       <h2>Edit Your Profile</h2>
-      <form className='form' onSubmit={updateUser}>
+      <form className='max-w-md flex flex-col gap-3' onSubmit={updateUser}>
         <div className='form-control'>
-          <label htmlFor='name'>Name</label>
-          <input
-            className='input'
-            type='text'
-            name='name'
-            defaultValue={user?.name ?? ''}
-          />
+          <Label htmlFor='name'>Name</Label>
+          <Input type='text' name='name' defaultValue={user?.name ?? ''} />
         </div>
         <div className='form-control'>
-          <label htmlFor='bio'>Bio</label>
-          <textarea
-            className='input'
+          <Label htmlFor='bio'>Bio</Label>
+          <Textarea
             name='bio'
             cols={35}
             rows={5}
             defaultValue={user?.bio ?? ''}
-          ></textarea>
+          ></Textarea>
         </div>
         <div className='form-control'>
-          <label htmlFor='age'>Age</label>
-          <input type='text' name='age' defaultValue={user?.age ?? 0} />
+          <Label htmlFor='age'>Age</Label>
+          <Input type='text' name='age' defaultValue={user?.age ?? 0} />
         </div>
         <div className='form-control'>
-          <label htmlFor='image'>Profile Image URL</label>
-          <input type='text' name='image' defaultValue={user?.image ?? ''} />
+          <Label htmlFor='image'>Profile Image URL</Label>
+          <Input type='text' name='image' defaultValue={user?.image ?? ''} />
         </div>
 
-        <button className='form-button' type='submit'>
+        <Button className='mt-4' type='submit'>
           Save
-        </button>
+        </Button>
       </form>
     </div>
   )

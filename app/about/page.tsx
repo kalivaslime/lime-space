@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <h1 className='text-5xl font-bold text-emerald-300 mb-3'>About Us</h1>
+      <h1 className='text-3xl font-bold mb-3'>About Us</h1>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat
         explicabo deleniti corrupti eligendi consectetur? Ducimus labore velit

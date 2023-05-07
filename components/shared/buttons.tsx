@@ -1,8 +1,9 @@
 'use client'
 
 import {useSession, signIn, signOut} from 'next-auth/react'
-import Image from 'next/image'
 import Link from 'next/link'
+import {Button} from '../ui/button'
+import {Avatar, AvatarFallback, AvatarImage} from '../ui/avatar'
 
 export function SignInButton() {
   const {data: session, status} = useSession()
@@ -15,28 +16,17 @@ export function SignInButton() {
   if (status === 'authenticated') {
     return (
       <Link href={`/dashboard`}>
-        <Image
-          className='rounded-full'
-          src={session.user?.image ?? '/mememan.webp'}
-          width={40}
-          height={40}
-          alt='Your Name'
-        />
+        <Avatar className='h-12 w-12'>
+          <AvatarImage src={session.user?.image ?? '/mememan.webp'} />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
       </Link>
     )
   }
 
-  return (
-    <button className='nav-button' onClick={() => signIn()}>
-      Sign in
-    </button>
-  )
+  return <Button onClick={() => signIn()}>Sign in</Button>
 }
 
 export function SignOutButton() {
-  return (
-    <button className='nav-button' onClick={() => signOut()}>
-      Sign out
-    </button>
-  )
+  return <Button onClick={() => signOut()}>Sign out</Button>
 }

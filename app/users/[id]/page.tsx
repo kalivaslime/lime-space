@@ -26,7 +26,7 @@ export default async function UserProfile({params}: Props) {
         width={300}
         height={300}
         alt={`${name}'s profile`}
-        className='rounded-md shadow-card shadow-emerald-500/20'
+        className='rounded-md'
       />
       <h3>Bio</h3>
       <p className='text-center max-w-md'>

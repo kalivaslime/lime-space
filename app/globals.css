@@ -1,93 +1,81 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-html {
-  display: block;
-  font-size: 13px;
-  @media (min-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-body {
-  @apply bg-gray-700 text-gray-100;
-  background: linear-gradient(
-    176deg,
-    rgba(18, 24, 27, 1) 50%,
-    rgba(32, 39, 55, 1) 100%
-  );
-  min-height: 100vh;
-  background-attachment: fixed;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-normal text-white text-2xl;
-}
-
-p {
-  @apply font-normal text-white;
-}
-
+ 
 @layer base {
-  ::selection {
-    background-color: #d946ef;
-    color: #ffffff;
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+ 
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+ 
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --ring: 215 20.2% 65.1%;
+ 
+    --radius: 0.5rem;
   }
-
-  ::-moz-selection {
-    background-color: #d946ef;
-    color: #ffffff;
-  }
-
-  ::-webkit-selection {
-    background-color: #d946ef;
-    color: #ffffff;
+ 
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+ 
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+ 
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+ 
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+ 
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+ 
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --ring: 216 34% 17%;
+ 
+    --radius: 0.5rem;
   }
 }
-
-@layer components {
-  .btn {
-    @apply bg-emerald-500 text-white font-bold py-2 px-4 rounded;
+ 
+@layer base {
+  * {
+    @apply border-border;
   }
-  .nav-links {
-    @apply flex gap-3 text-xl font-semibold text-emerald-300;
-  }
-  .nav-link {
-    @apply gap-4 h-16 flex items-center p-1  hover:text-emerald-400;
-  }
-  .nav-button {
-    @apply border border-emerald-500 hover:bg-emerald-300 hover:text-emerald-950 rounded-sm px-2 py-1 transition-all;
-  }
-  .spin {
-    @apply animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-emerald-500;
-  }
-  .error-button {
-    @apply bg-red-500 text-white font-bold py-2 px-4 rounded;
-  }
-  input,
-  textarea {
-    @apply border border-emerald-500 rounded-sm px-2 py-1 bg-gray-800 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500;
-  }
-  label {
-    @apply text-emerald-300 font-semibold;
-  }
-  .form-control {
-    @apply flex flex-col gap-1;
-  }
-  .form {
-    @apply flex flex-col gap-4;
-  }
-
-  .form-button {
-    @apply bg-emerald-500 text-white font-bold py-2 px-4 rounded;
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
-/* .container {
-  @apply max-w-screen-2xl mx-auto px-3 md:px-8;
-} */
